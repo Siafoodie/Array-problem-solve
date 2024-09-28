@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+#define r 4
+#define c 5
+
+int fi(int matrix[r][c]) {
+    int mI = 0;
+    int mc = 0;
+
+    for (int i = 0; i < r; i++) {
+        int count = 0;
+
+        for (int j = 0; j < c; j++) {
+            if (matrix[i][j] == 1) {
+                count++;
+            }
+        }
+
+        if (count > mc) {
+            mc = count;
+            mI= i;
+        }
+    }
+
+    return mI;
+}
+
+int main() {
+    int matrix[r][c] = {
+        {0, 1, 0, 0, 1},
+        {1, 1, 1, 0, 0},
+        {0, 0, 1, 1, 1},
+        {1, 0, 0, 0, 0}
+    };
+
+    int row= fi(matrix);
+    printf(" the maximum number of 1's is: %d\n", row);
+    
+    return 0;
+}

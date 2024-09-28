@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int fi(int arr[], int size) {
+    int can = -1;
+    int cou = 0;
+
+   
+    for (int i = 0; i < size; i++) {
+        if (cou == 0) {
+            can = arr[i];
+            cou = 1;
+        } else if (arr[i] == can) {
+            cou++;
+        } else {
+            cou--;
+        }
+    }
+
+    
+    cou= 0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == can) {
+            cou++;
+        }
+        }}

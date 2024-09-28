@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void Max(int arr[], int size, int *min, int *max) {
+    *min = arr[0];
+    *max = arr[0];
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < *min) {
+            *min = arr[i];
+        }
+        if (arr[i] > *max) {
+            *max = arr[i];
+        }
+    }
+}
+
+int main() {
+    int arr[] = {34, 12, 5, 67, 23, -1, 90};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int min, max;
+
+    Max(arr, size, &min, &max);
+
+    printf("Minimum  %d\n", min);
+    printf("Maximum  %d\n", max);
+
+   
+}
+
+
